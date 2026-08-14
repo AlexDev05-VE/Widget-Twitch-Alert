@@ -1,0 +1,102 @@
+/* ==========================================
+   1. DEFINICIÓN DE ANIMACIONES (KEYFRAMES)
+   ========================================== */
+
+/* Animación para el círculo exterior */
+@keyframes popInContainer {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animación para las imágenes internas (mantiene el centrado absolute) */
+@keyframes popInImage {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shrinkOutImage {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Despliegue del banner hacia la derecha */
+/* Despliegue del banner hacia la derecha */
+@keyframes expandBanner {
+    0% {
+        max-width: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        opacity: 0;
+    }
+
+    100% {
+        max-width: 500px;
+        /* Expansión total */
+
+        /* LA MAGIA AQUÍ: 140px (ocultos bajo el logo) + 20px (espacio visual) = 160px */
+        padding-left: 160px;
+        padding-right: 40px;
+        opacity: 1;
+    }
+}
+
+/* Aparición suave del texto */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+   2. ASIGNACIÓN A LOS COMPONENTES
+   ========================================== */
+
+.logo-container {
+    animation: popInContainer 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.logo-xbox {
+    animation:
+        popInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards,
+        shrinkOutImage 0.4s ease-in 3.3s forwards;
+}
+
+.logo-nuevo {
+    animation: popInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.6s forwards;
+}
+
+.container_message {
+    animation: expandBanner 0.7s cubic-bezier(0.25, 1, 0.5, 1) 3s forwards;
+}
+
+.container_message_text {
+    animation: fadeInText 0.4s ease-out 3.5s forwards;
+}
