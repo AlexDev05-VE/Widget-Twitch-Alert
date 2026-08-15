@@ -1,0 +1,31 @@
+/* ==========================================
+   1. RESET Y CONFIGURACIÓN BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    /* Fundamental para OBS */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* ==========================================
+   2. ESTRUCTURA (Para que queden lado a lado)
+   ========================================== */
+.widget-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Mantiene el círculo y banner en línea horizontal */
+    align-items: center;
+    justify-content: center;
+}
