@@ -44,24 +44,12 @@ class IconBits extends Icon {
     -getTypeAlert() = Tipo de alerta
 */
 class ObsidianBitsIcon extends IconBits {
-
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar
-        return "Obsidian Bits Icon";
-    }
-
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_obsidian.png"
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_obsidian.png";
     }
 }
 
-// 2. Icono para el tema Purple
+// 2. Icono para el tema Purpura
 /* 
 -- Clase Concreta: PurpleBitsIcon
     -getNameIcon() = Nombre del icono
@@ -69,19 +57,8 @@ class ObsidianBitsIcon extends IconBits {
     -getTypeAlert() = Tipo de alerta
 */
 class PurpleBitsIcon extends IconBits {
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar   
-        return "Purple Bits Icon";
-    }
-
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_purpura.png";
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_purpura.png";
     }
 }
 
@@ -93,24 +70,12 @@ class PurpleBitsIcon extends IconBits {
     -getTypeAlert() = Tipo de alerta
 */
 class EsmeraldaBitsIcon extends IconBits {
-
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar
-        return "Esmeralda Bits Icon";
-    }
-
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_esmeralda.png";
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_esmeralda.png";
     }
 }
 
-// -- 4. Icono para el tema Diamante
+// 4. Icono para el tema Diamante
 /* 
 -- Clase Concreta: DiamanteBitsIcon
     -getNameIcon() = Nombre del icono
@@ -118,49 +83,25 @@ class EsmeraldaBitsIcon extends IconBits {
     -getTypeAlert() = Tipo de alerta
 */
 class DiamanteBitsIcon extends IconBits {
-
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar
-        return "Diamante Bits Icon";
-    }
-
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_diamante.png";
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_diamante.png";
     }
 }
 
-// -- 4. Icono para el tema Rubí
+// 5. Icono para el tema Rubí
 /* 
--- Clase Concreta: RubyBitsIcon
+-- Clase Concreta: RubiBitsIcon
     -getNameIcon() = Nombre del icono
     -getSrcUrl() = URL del icono
     -getTypeAlert() = Tipo de alerta
 */
-class RubyBitsIcon extends IconBits {
-
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar
-        return "Ruby Bits Icon";
-    }
-
+class RubiBitsIcon extends IconBits {
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_ruby.png";
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_ruby.png";
     }
 }
 
-// -- 5. Icono para el tema Amarillo
+// 6. Icono para el tema Amarillo
 /* 
 -- Clase Concreta: AmarilloBitsIcon
     -getNameIcon() = Nombre del icono
@@ -168,21 +109,9 @@ class RubyBitsIcon extends IconBits {
     -getTypeAlert() = Tipo de alerta
 */
 class AmarilloBitsIcon extends IconBits {
-
-    get getNameIcon() {
-        //retorna un string del nombre del icono para identificar
-        return "Amarillo Bits Icon";
-    }
-
     get getSrcUrl() {
-        //retorna un string de la URL del icono
-        return "./assets/image/bits logo/bits_amarillo.png";
-    }
-
-    get getTypeAlert() {
-        //retorna un string del tipo de alerta
-        return "Bits";
+        return "/src/frontend/assets/image/bits/bits_amarillo.png";
     }
 }
 // Retorno para facilitar el uso de las clases 
-export { ObsidianBitsIcon, PurpleBitsIcon, EsmeraldaBitsIcon, DiamanteBitsIcon, RubyBitsIcon, AmarilloBitsIcon };
+export { ObsidianBitsIcon, PurpleBitsIcon, EsmeraldaBitsIcon, DiamanteBitsIcon, RubiBitsIcon, AmarilloBitsIcon };
