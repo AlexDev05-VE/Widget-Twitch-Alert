@@ -47,7 +47,7 @@ class Bits extends SoundTheme {
 
     get getSrcSound() {
         return {
-            sonido_src: "./assets/sound/xbox_sound/xbox_logro.mp3"
+            sonido_src: "../assets/sound/xbox_sound/xbox_logro.mp3"
         };
     }
 
@@ -74,7 +74,7 @@ class Follow extends SoundTheme {
 
     get getSrcSound() {
         return {
-            sonido: "#"
+            sonido: "../assets/sound/xbox_sound/xbox_logro.mp3"
         };
     }
 
@@ -101,7 +101,7 @@ class Suscriptores extends SoundTheme {
 
     get getSrcSound() {
         return {
-            sonido: "./assets/sound/Xbox Rare Achievement.mp3"
+            sonido: "../assets/sound/xbox_sound/xbox_logro.mp3"
         };
     }
 
