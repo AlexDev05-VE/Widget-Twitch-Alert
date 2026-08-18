@@ -1,29 +1,61 @@
 /* ==========================================
    1. CÍRCULO Y LOGOS (Superposición)
    ========================================== */
-.logo-container {
+
+/* 
+ * .logo-outer:
+ * Contenedor circular exterior (capa base).
+ * Se agrega position: relative, transform: scale(0) y opacity: 0 para evitar
+ * el destello/flicker inicial antes de que arranque la animación.
+ */
+/* Si quieres que .logo-outer no se escale desde cero y sirva de marco fijo */
+.logo-outer {
     width: 140px;
     height: 140px;
-    min-width: 140px;
-    /* Evita que se aplaste al salir el banner */
-    background: #D4A6FE;
     border-radius: 50%;
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    /* Color del círculo exterior */
 
     position: relative;
-    /* Permite que las imágenes se centren con absolute */
     z-index: 2;
-    /* Mantiene el círculo por encima del banner */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 
-    /* Estado inicial */
+    /* Estado inicial colapsado */
     transform: scale(0);
     opacity: 0;
 }
 
-/* Base para ambas imágenes (Para que queden EXACTAMENTE en el centro) */
+/* 
+ * .logo-container:
+ * Círculo frontal interactivo sobre el cual se montan los logos.
+ */
+.logo-container {
+    width: 140px;
+    height: 140px;
+    min-width: 140px;
+    background: #D4A6FE;
+    /* Color del círculo interior */
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 3;
+    /* Un nivel por encima de logo-outer para cubrirlo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    /* Estado inicial colapsado */
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* 
+ * .logo-container img:
+ * Centrado absoluto de imágenes.
+ */
 .logo-container img {
     position: absolute;
-    /* Evita que los logos se empujen entre sí */
     top: 50%;
     left: 50%;
     width: 60%;
@@ -31,9 +63,12 @@
     object-fit: contain;
 }
 
+/* 
+ * .logo-xbox, .logo-nuevo:
+ * Estados iniciales para ambos logos.
+ */
 .logo-xbox,
 .logo-nuevo {
-    /* Estado inicial */
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
 }
@@ -41,27 +76,27 @@
 /* ==========================================
    2. BANNER DE TEXTO
    ========================================== */
+
+/* 
+ * .container_message:
+ * Píldora/Banner que se despliega horizontalmente.
+ */
 .container_message {
     background-color: #BC68FE;
 
-    /* 1. Altura exacta igual a la de .logo-container */
     height: 140px;
-
-    /* 2. La mitad exacta de 140px para hacer la curva perfecta */
     border-radius: 70px;
 
     display: flex;
     align-items: center;
 
-    /* 3. Lo metemos exactamente hasta la mitad del logo (140/2 = 70) */
     margin-left: -140px;
-
     z-index: 1;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
-    /* Estado inicial colapsado (invisible) */
-    width: 500px;
-    max-width: 0px;
+    /* Estado colapsado previo al despliegue */
+    width: 100%;
+    max-width: 0;
     padding-left: 0px;
     padding-right: 0px;
     opacity: 0;
@@ -69,16 +104,23 @@
     white-space: nowrap;
 }
 
+/* 
+ * .container_message_text:
+ * Bloque contenedor del texto.
+ */
 .container_message_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
 
-    /* Estado inicial */
     opacity: 0;
 }
 
+/* 
+ * .message_header:
+ * Texto principal.
+ */
 .message_header {
     color: #ffffff;
     font-size: 1.1rem;
@@ -88,6 +130,10 @@
     line-height: 1.2;
 }
 
+/* 
+ * .message_footer:
+ * Texto secundario.
+ */
 .message_footer {
     color: #ffffff;
     font-size: 1rem;
