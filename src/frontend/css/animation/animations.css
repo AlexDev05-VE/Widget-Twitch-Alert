@@ -81,10 +81,9 @@
     }
 }
 
-/* Expansión del banner a 600px */
+/* Expansión del banner fluida y adaptativa */
 @keyframes expandBanner {
     0% {
-        width: 0px;
         max-width: 0px;
         padding-left: 0px;
         padding-right: 0px;
@@ -92,26 +91,24 @@
     }
 
     100% {
-        width: 600px;
-        max-width: 600px;
+        max-width: 850px;
+        /* Suficiente espacio para textos largos */
         padding-left: 160px;
         padding-right: 40px;
         opacity: 1;
     }
 }
 
-/* Contracción del banner de regreso a 0px */
+/* Contracción del banner fluida y adaptativa */
 @keyframes contractBanner {
     0% {
-        width: 600px;
-        max-width: 600px;
+        max-width: 850px;
         padding-left: 160px;
         padding-right: 40px;
         opacity: 1;
     }
 
     100% {
-        width: 0px;
         max-width: 0px;
         padding-left: 0px;
         padding-right: 0px;
@@ -159,7 +156,7 @@
  */
 .logo-outer {
     animation:
-        logoContainerOuter 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards,
+        logoContainerOuter 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards,
         shrinkOutContainerLogoOuter 0.4s cubic-bezier(0.4, 0, 1, 1) 9.9s forwards;
 }
 
@@ -170,7 +167,7 @@
  */
 .logo-container {
     animation:
-        popInContainer 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.65s forwards,
+        popInContainer 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.85s forwards,
         shrinkOutContainer 0.4s cubic-bezier(0.4, 0, 1, 1) 9.8s forwards;
 }
 
@@ -183,7 +180,7 @@
  */
 .logo-xbox {
     animation:
-        popInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s forwards,
+        popInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.85s forwards,
         shrinkOutImage 0.3s cubic-bezier(0.4, 0, 1, 1) 1.3s forwards,
         popInImage 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 9.0s forwards,
         shrinkOutImage 0.3s cubic-bezier(0.4, 0, 1, 1) 9.7s forwards;
@@ -220,4 +217,78 @@
     animation:
         fadeInText 0.5s cubic-bezier(0.16, 1, 0.3, 1) 2.3s forwards,
         fadeOutText 0.3s ease-in 8.4s forwards;
+}
+
+/* ==========================================
+   Efecto de Luz Cuádruple (Shimmer)
+   ========================================== */
+@keyframes quadrupleShine {
+    0% {
+        transform: translateX(-120%);
+    }
+
+    /* Primera pasada completa */
+    15% {
+        transform: translateX(120%);
+    }
+
+    /* Retorno invisible rápido al punto de origen */
+    15.01% {
+        transform: translateX(-120%);
+    }
+
+    /* Pausa sutil */
+    25% {
+        transform: translateX(-120%);
+    }
+
+    /* Segunda pasada completa */
+    40% {
+        transform: translateX(120%);
+    }
+
+    /* Retorno invisible rápido al punto de origen */
+    40.01% {
+        transform: translateX(-120%);
+    }
+
+    /* Pausa sutil */
+    50% {
+        transform: translateX(-120%);
+    }
+
+    /* Tercera pasada completa */
+    65% {
+        transform: translateX(120%);
+    }
+
+    /* Retorno invisible rápido al punto de origen */
+    65.01% {
+        transform: translateX(-120%);
+    }
+
+    /* Pausa sutil */
+    75% {
+        transform: translateX(-120%);
+    }
+
+    /* Cuarta pasada completa */
+    90% {
+        transform: translateX(120%);
+    }
+
+    /* Reposo final fuera de la vista */
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+/* 
+ * Brillo de Luz en el Banner:
+ * Se ejecuta durante 5.2 segundos (4 pasadas con pausas elegantes).
+ * Se sincroniza para ejecutarse 2.7s después de que se inicia la alerta
+ * (justo cuando el banner se expandió al máximo y el texto se reveló).
+ */
+.container_message::after {
+    animation: quadrupleShine 5.2s cubic-bezier(0.25, 1, 0.5, 1) 2.7s forwards;
 }
